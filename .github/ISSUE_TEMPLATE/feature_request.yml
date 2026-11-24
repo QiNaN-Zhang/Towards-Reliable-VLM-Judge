@@ -1,0 +1,58 @@
+name: Feature Request
+description: Suggest a new task, scorer, probe, analysis, or improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest an idea for GridWM-Judge — new diagnostic tasks, scoring
+        protocols, controlled analyses, or tooling improvements are all welcome.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What limitation are you running into? What reliability diagnostic does the current benchmark not cover?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the feature and how it would work (e.g. new task variant, probe condition, scorer metric, CLI flag).
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: Which part of the pipeline does this touch?
+      options:
+        - Dataset / task design (MiniGrid, MiniWorld, Habitat)
+        - Inference (tools/inference)
+        - Scoring / metrics (tools/scoring)
+        - Experiment builders (tools/experiments)
+        - Launch scripts / CLI
+        - Documentation / reproducibility
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any alternative approaches you considered, and why you prefer this one.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to open a PR for this
+        - label: This changes benchmark tasks or metrics (would need re-validation)
